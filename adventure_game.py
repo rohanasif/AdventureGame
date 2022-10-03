@@ -10,9 +10,11 @@ def print_pause(msg):
 
 
 def initial_setup():
-    print_pause("You find yourself standing in an open field, filled with grass and yellow wildflowers.")
-    print_pause("Rumor has it that a wicked " + monster + " is somewhere around here, and has been terrifying the"
-                                                          " nearby village.")
+    print_pause("You find yourself standing in an open field,"
+                " filled with grass and yellow wildflowers.")
+    print_pause("Rumor has it that a wicked " + monster +
+                " is somewhere around here, and has been"
+                " terrifying the nearby village.")
     print_pause("Enter 1 to knock on the door of the house.")
     print_pause("Enter 2 to peer into the cave.")
 
@@ -34,12 +36,13 @@ initial_setup()
 main_loop()
 
 
-play_again = input("Would you like to play again? Enter 'y' for yes or 'n' for no: ")
-if play_again == "y" or "Y":
+play_again = input("Would you like to play again?"
+                   " Enter 'y' for yes or 'n' for no: ")
+if play_again.lower() == "y":
     initial_setup()
     main_loop()
 
-elif play_again == "n" or "N":
+if play_again.lower() == "n":
     print("Thank you for playing")
 
 else:
