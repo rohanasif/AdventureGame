@@ -9,6 +9,20 @@ def print_pause(msg):
     time.sleep(1)
 
 
+def repeat():
+    play_again = input("Would you like to play again?"
+                       " Enter 'y' for yes or 'n' for no: ")
+    if play_again.lower() == "y":
+        initial_setup()
+        main_loop()
+
+    elif play_again.lower() == "n":
+        print("Thank you for playing")
+
+    else:
+        print("Please enter either 'y' or 'n'")
+
+
 def initial_setup():
     print_pause("You find yourself standing in an open field,"
                 " filled with grass and yellow wildflowers.")
@@ -21,29 +35,18 @@ def initial_setup():
 
 def main_loop():
     while True:
-        choice = input("What would you like to do?")
-        time.sleep(1)
-        print("(Please enter 1 or 2).")
+        print_pause("What would you like to do?")
+        print_pause("(Please enter 1 or 2).")
+        choice = input()
         if choice == "1":
             print("The " + monster + " kills you! You lose!")
+            repeat()
             break
         elif choice == "2":
             print("You win")
+            repeat()
             break
 
 
 initial_setup()
 main_loop()
-
-
-play_again = input("Would you like to play again?"
-                   " Enter 'y' for yes or 'n' for no: ")
-if play_again.lower() == "y":
-    initial_setup()
-    main_loop()
-
-if play_again.lower() == "n":
-    print("Thank you for playing")
-
-else:
-    print("Please enter either 'y' or 'n'")
